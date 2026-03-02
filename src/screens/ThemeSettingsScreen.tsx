@@ -41,7 +41,7 @@ const ThemeSettingsScreen = ({ navigation }: any) => {
     };
 
     return (
-        <View style={{ flex: 1, backgroundColor: 'transparent' }}>
+        <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
             <Appbar.Header style={{ backgroundColor: 'transparent' }}>
                 <Appbar.BackAction onPress={() => navigation.goBack()} />
                 <Appbar.Content title="主题设置" />

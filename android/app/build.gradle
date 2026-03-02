@@ -82,8 +82,9 @@ android {
         applicationId "com.kcrlfront"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0 Preview"
+        // CI 会通过 -PciVersionCode=... 传入, 本地开发使用默认值
+        versionCode project.hasProperty('ciVersionCode') ? project.property('ciVersionCode').toString().toInteger() : 1
+        versionName project.hasProperty('ciVersionName') ? project.property('ciVersionName') : "1.0 Preview"
     }
     signingConfigs {
         debug {
@@ -93,12 +94,11 @@ android {
             keyPassword 'android'
         }
         release {
-            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
-                storeFile file(MYAPP_RELEASE_STORE_FILE)
-                storePassword MYAPP_RELEASE_STORE_PASSWORD
-                keyAlias MYAPP_RELEASE_KEY_ALIAS
-                keyPassword MYAPP_RELEASE_KEY_PASSWORD
-            }
+            storeFile file('idlike.jks')
+            // CI 通过环境变量传入, 本地开发使用默认值
+            storePassword System.getenv('KEYSTORE_PASSWORD') ?: 'idlike'
+            keyAlias System.getenv('KEY_ALIAS') ?: 'idlike'
+            keyPassword System.getenv('KEY_PASSWORD') ?: 'idlike'
         }
     }
     buildTypes {

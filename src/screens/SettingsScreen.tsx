@@ -272,7 +272,7 @@ const SettingsScreen = ({ navigation }: any) => {
         }
     }
     return (
-        <View style={{ flex: 1, backgroundColor: 'transparent' }}>
+        <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 24, paddingBottom: 20, backgroundColor: 'transparent', paddingTop: insets.top + 10 }}>
                 <Text variant="displaySmall" style={{ fontWeight: 'bold', fontFamily: 'Roboto', color: theme.colors.onSurface }}>
                     设置
