@@ -83,8 +83,8 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         // CI 会通过 -PciVersionCode=... 传入, 本地开发使用默认值
-        versionCode project.hasProperty('ciVersionCode') ? project.property('ciVersionCode').toString().toInteger() : 1
-        versionName project.hasProperty('ciVersionName') ? project.property('ciVersionName') : "1.0 Preview"
+        versionCode project.hasProperty('ciVersionCode') ? project.property('ciVersionCode').toString().toInteger() : 260302
+        versionName project.hasProperty('ciVersionName') ? project.property('ciVersionName') : "1.0.1"
     }
     signingConfigs {
         debug {

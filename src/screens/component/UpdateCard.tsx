@@ -21,10 +21,10 @@ const UpdateCard = forwardRef<UpdateCardRef>((_, ref) => {
     const [currentVersion, setCurrentVersion] = useState(0);
     const [currentVersionName, setCurrentVersionName] = useState('1.0 Preview');
     const [updateInfo, setUpdateInfo] = useState({
-        version: 1,
-        version_name: '1.0 Preview',
-        updates: '暂无更新',
-        download: '暂无更新',
+        version: 260302,
+        version_name: '1.0.1',
+        updates: '修复了黑夜模式下的显示问题',
+        download: 'http://47.113.189.138/apk/kcrlFront-release-260302.apk',
     });
 
     const [dialogVisible, setDialogVisible] = useState(false);
