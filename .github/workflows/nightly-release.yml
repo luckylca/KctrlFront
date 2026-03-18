@@ -99,3 +99,9 @@ jobs:
             versionCode: ${{ steps.meta.outputs.date_code }}
             versionName: from android/app/build.gradle (unchanged)
           files: nightly/*.apk
+          
+      - name: Upload nightly release on workflow
+        uses: actions/upload-artifact@v4
+        with:
+         name: manager
+         path: nightly/*
